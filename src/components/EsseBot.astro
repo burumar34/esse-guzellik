@@ -1,13 +1,22 @@
-<!-- EsseBot.astro - Satış Odaklı Müşteri Asistanı (Hatasız Versiyon) -->
+<!-- EsseBot.astro - Gelişmiş Satış Asistanı -->
 <div class="esse-bot-wrapper">
     <button class="bot-toggle" id="botToggle">💬 Hızlı Bilgi Al</button>
     <div class="bot-window" id="botWindow" style="display: none;">
         <div class="bot-header">
-            <span> Esse Satış Asistanı</span>
+            <span>🤖 Esse Satış Asistanı</span>
             <button class="close-btn" id="closeBot">×</button>
         </div>
         <div class="bot-messages" id="botMessages">
-            <div class="message bot-message">Merhaba! Size nasıl yardımcı olabilirim? 😊<br><br>🔹 Fiyat bilgisi<br> Cihaz detayları<br>🔹 Müsaitlik durumu</div>
+            <div class="message bot-message">
+                Merhaba! 👋 Esse Güzellik'e hoş geldiniz.<br><br>
+                Size nasıl yardımcı olabilirim? Aşağıdaki seçeneklerden birini seçebilir veya sorunuzu yazabilirsiniz:
+            </div>
+            <div class="quick-replies" id="quickReplies">
+                <button class="reply-btn" data-action="fiyat">💰 Fiyat Bilgisi</button>
+                <button class="reply-btn" data-action="randevu">📅 Müsaitlik Durumu</button>
+                <button class="reply-btn" data-action="adres">📍 Adres & Yol Tarifi</button>
+                <button class="reply-btn" data-action="hizmetler">✨ Hizmetlerimiz</button>
+            </div>
         </div>
         <div class="bot-input-area">
             <input type="text" placeholder="Sorunuzu yazın..." id="botInput" />
@@ -27,6 +36,16 @@
     .message { padding: 10px 15px; border-radius: 12px; max-width: 85%; font-size: 0.9rem; line-height: 1.4; word-wrap: break-word; }
     .bot-message { background: white; border: 1px solid #eee; align-self: flex-start; }
     .user-message { background: var(--gold); color: var(--dark); align-self: flex-end; margin-left: auto; }
+    
+    /* Hızlı Yanıt Butonları */
+    .quick-replies { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 5px; }
+    .reply-btn { 
+        background: white; border: 1px solid var(--gold); color: var(--dark); 
+        padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; 
+        transition: all 0.2s ease; white-space: nowrap;
+    }
+    .reply-btn:hover { background: var(--gold); color: white; }
+    
     .bot-input-area { padding: 15px; border-top: 1px solid #eee; display: flex; gap: 10px; }
     .bot-input-area input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 8px; outline: none; }
     .bot-input-area button { background: var(--gold); border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; }
@@ -40,8 +59,8 @@
         var inputField = document.getElementById('botInput');
         var sendBtn = document.getElementById('sendBtn');
         var messagesContainer = document.getElementById('botMessages');
+        var quickRepliesContainer = document.getElementById('quickReplies');
         
-        // Telefon numarası sabiti
         var PHONE_NUMBER = "905536185152"; 
 
         function addMessage(text, isUser) {
@@ -53,26 +72,51 @@
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
 
+        function removeQuickReplies() {
+            if (quickRepliesContainer) {
+                quickRepliesContainer.style.display = 'none';
+            }
+        }
+
         function handleResponse(userText) {
             var lower = userText.toLowerCase();
             var response = "";
             var waLink = "https://wa.me/" + PHONE_NUMBER;
 
-            if (lower.indexOf("fiyat") > -1 || lower.indexOf("kaç para") > -1 || lower.indexOf("ücret") > -1) {
-                response = "Güncel fiyat listemizi incelemek için 👉 <a href='/fiyat-listesi' target='_blank' style='color:#D4AF37;font-weight:bold;'>Buraya Tıklayın</a><br><br>Paket indirimleri için WhatsApp'tan 'PAKET' yazabilirsiniz!";
+            // FİYAT ALGILAMA
+            if (lower.indexOf("fiyat") > -1 || lower.indexOf("kaç para") > -1 || lower.indexOf("ücret") > -1 || lower.indexOf("ne kadar") > -1 || lower.indexOf("pahalı") > -1) {
+                response = "✨ Güncel fiyat listemizi incelemek için 👉 <a href='/fiyat-listesi' target='_blank' style='color:#D4AF37;font-weight:bold;'>Buraya Tıklayın</a><br><br>💎 Paket indirimleri ve size özel kampanyalar için WhatsApp'tan 'PAKET' yazabilirsiniz!";
             } 
-            else if (lower.indexOf("lazer") > -1 || lower.indexOf("epilasyon") > -1) {
+            // LAZER/EPİLASYON ALGILAMA
+            else if (lower.indexOf("lazer") > -1 || lower.indexOf("epilasyon") > -1 || lower.indexOf("tüy") > -1) {
                 var lazerWa = waLink + "?text=Merhaba,%20Lazer%20Epilasyon%20paket%20fiyatları%20hakkında%20bilgi%20almak%20istiyorum.";
-                response = "Lazer epilasyon seans başlangıç fiyatımız güncel listede yer almaktadır. Size özel paket fiyatı almak için WhatsApp'a yönlendiriyorum... 👇<br><br><a href='" + lazerWa + "' target='_blank' style='background:#25D366;color:white;padding:8px 15px;border-radius:20px;text-decoration:none;display:inline-block;margin-top:5px;'> WhatsApp'tan Paket Fiyatı Al</a>";
+                response = "💎 Lazer epilasyon seans başlangıç fiyatımız güncel listede yer almaktadır.<br><br>Size özel paket fiyatı almak için WhatsApp'a yönlendiriyorum... 👇<br><br><a href='" + lazerWa + "' target='_blank' style='background:#25D366;color:white;padding:8px 15px;border-radius:20px;text-decoration:none;display:inline-block;margin-top:5px;'>💬 WhatsApp'tan Paket Fiyatı Al</a>";
             }
-            else if (lower.indexOf("cilt") > -1 || lower.indexOf("bakım") > -1) {
-                response = "Cilt bakımı hizmetlerimiz ve cihaz detayları için 👉 <a href='/hizmet-detay/cilt-bakimi' target='_blank' style='color:#D4AF37;font-weight:bold;'>Detay Sayfası</a><br><br>Randevu oluşturmak için WhatsApp kullanabilirsiniz.";
+            // CİLT BAKIMI ALGILAMA
+            else if (lower.indexOf("cilt") > -1 || lower.indexOf("bakım") > -1 || lower.indexOf("hydrafacial") > -1) {
+                response = "✨ Cilt bakımı hizmetlerimiz ve cihaz detayları için 👉 <a href='/hizmet-detay/cilt-bakimi' target='_blank' style='color:#D4AF37;font-weight:bold;'>Detay Sayfası</a><br><br>Randevu oluşturmak için WhatsApp kullanabilirsiniz.";
             }
+            // RANDEVU/MÜSAİTLİK ALGILAMA
+            else if (lower.indexOf("randevu") > -1 || lower.indexOf("müsait") > -1 || lower.indexOf("saat") > -1 || lower.indexOf("boş") > -1) {
+                var randevuWa = waLink + "?text=Merhaba,%20Müsaitlik%20durumu%20ve%20randevu%20oluşturmak%20istiyorum.";
+                response = " Anlık müsaitlik durumumuzu kontrol etmek için lütfen WhatsApp üzerinden bize ulaşın. Uzman ekibimiz size en uygun saati hemen planlasın! 👇<br><br><a href='" + randevuWa + "' target='_blank' style='background:#25D366;color:white;padding:8px 15px;border-radius:20px;text-decoration:none;display:inline-block;margin-top:5px;'>💬 Müsaitlik Sorgula</a>";
+            }
+            // ADRES/KONUM ALGILAMA
+            else if (lower.indexOf("adres") > -1 || lower.indexOf("nerede") > -1 || lower.indexOf("konum") > -1 || lower.indexOf("yol") > -1 || lower.indexOf("tarif") > -1) {
+                response = "📍 Salonumuz: Toros Mahallesi, 803. Sokak, No: 12/A, Muratpaşa / Antalya<br><br>🗺️ Yol tarifi ve harita için 👉 <a href='/iletisim' target='_blank' style='color:#D4AF37;font-weight:bold;'>İletişim Sayfası</a>";
+            }
+            // HİZMETLER ALGILAMA
+            else if (lower.indexOf("hizmet") > -1 || lower.indexOf("ne yapıyorsunuz") > -1 || lower.indexOf("neler var") > -1) {
+                response = "✨ Sunduğumuz başlıca hizmetler:<br>• Lazer Epilasyon<br>• Profesyonel Cilt Bakımı<br>• Vücut Şekillendirme<br>• Protez Tırnak<br>• Kalıcı Makyaj<br><br>Tüm detaylar için 👉 <a href='/hizmetler' target='_blank' style='color:#D4AF37;font-weight:bold;'>Hizmetler Sayfası</a>";
+            }
+            // GENEL YÖNLENDİRME
             else {
                 response = "Size en hızlı şekilde dönüş yapabilmemiz için lütfen WhatsApp üzerinden bize ulaşın. Uzman ekibimiz size anında yardımcı olacaktır! 👇<br><br><a href='" + waLink + "' target='_blank' style='background:#25D366;color:white;padding:8px 15px;border-radius:20px;text-decoration:none;display:inline-block;margin-top:5px;'>💬 WhatsApp'a Git</a>";
             }
 
-            setTimeout(function() { addMessage(response, false); }, 600);
+            setTimeout(function() { 
+                addMessage(response, false); 
+            }, 600);
         }
 
         function sendMessage() {
@@ -82,7 +126,28 @@
             
             addMessage(text, true);
             inputField.value = '';
+            removeQuickReplies();
             handleResponse(text);
+        }
+
+        // Hızlı Yanıt Butonları Event Listener
+        if (quickRepliesContainer) {
+            var buttons = quickRepliesContainer.querySelectorAll('.reply-btn');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', function() {
+                    var action = this.getAttribute('data-action');
+                    var btnText = this.innerText;
+                    
+                    addMessage(btnText, true);
+                    removeQuickReplies();
+                    
+                    // Buton aksiyonuna göre yanıt üret
+                    if (action === 'fiyat') handleResponse("fiyat bilgisi");
+                    else if (action === 'randevu') handleResponse("randevu müsaitlik");
+                    else if (action === 'adres') handleResponse("adres konum");
+                    else if (action === 'hizmetler') handleResponse("hizmetler neler var");
+                });
+            }
         }
 
         if(toggle && windowEl && closeBtn) {
