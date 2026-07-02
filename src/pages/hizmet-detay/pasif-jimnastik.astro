@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Pasif Jimnastik | Esse Güzellik">
+<section class="detail-hero"><div class="container"><span class="breadcrumb"><a href="/">Ana Sayfa</a> > <a href="/hizmetler">Hizmetler</a> > Pasif Jimnastik</span><h1>Pasif Jimnastik</h1><p>Elektrik stimülasyonu ile kas çalıştırma ve sıkılaşma.</p></div></section>
+<div class="container detail-layout">
+<aside class="detail-sidebar">
+<div class="machine-card"><div class="machine-image-wrapper"><img src="/images/pasif-jimnastik-placeholder.jpg" alt="EMS Body Sculptor" /><span class="machine-badge">KAS STİMÜLASYONU</span></div>
+<div class="machine-info"><h3>Cihaz Modeli</h3><p class="model-name">EMS Body Sculptor</p>
+<ul class="tech-specs"><li><strong>Teknoloji:</strong> Elektriksel Kas Stimülasyonu</li><li><strong>Kanal Sayısı:</strong> 8 Bağımsız Kanal</li><li><strong>Program:</strong> 12 Farklı Mod</li><li><strong>Seans Süresi:</strong> 30-45 Dakika</li></ul></div></div>
+<div class="info-box"><h4>🔄 Kür Süresi</h4><p>Haftada 2-3 kez, toplam 10-15 seans</p></div>
+<div class="info-box"><h4>💪 Etki</h4><p>20 dk = 2 saatlik egzersize eşdeğer</p></div>
+</aside>
+<main class="detail-content">
+<h2>Pasif Jimnastik Nedir?</h2>
+<p>Pasif jimnastik, elektrot pedler aracılığıyla kaslara düşük frekanslı elektrik akımı göndererek istemsiz kas kasılmaları sağlayan bir tedavi yöntemidir. Siz uzanırken cihaz kaslarınızı çalıştırır. Özellikle doğum sonrası toparlanma, hareketsiz yaşam tarzı olan bireyler ve bölgesel sıkılaşma isteyenler için idealdir.</p>
+<h3>Uygulama Alanları</h3>
+<ol class="process-steps">
+<li><strong>Karın Bölgesi:</strong> Karın kaslarını güçlendirme ve bel inceltme.</li>
+<li><strong>Kalça & Basen:</strong> Gluteus kaslarını tonlama ve lifting etkisi.</li>
+<li><strong>Üst Kol:</strong> Kol arkası sarkmalarını giderme.</li>
+<li><strong>Bacak:</strong> Ön ve arka bacak kaslarını sıkılaştırma.</li>
+</ol>
+<h3>Sıkça Sorulan Sorular</h3>
+<details class="faq-item"><summary>Acı verir mi?</summary><p>Hayır. Akım şiddeti konfor seviyenize göre ayarlanır. Karıncalanma ve kasılma hissi normaldir, acı yoktur.</p></details>
+<details class="faq-item"><summary>Kilo verir miyim?</summary><p>Pasif jimnastik doğrudan kilo verdirmaz. Kas tonusunu artırır, ölçülerde küçülme ve sıkılaşma sağlar. Diyet ve egzersizle kombine edildiğinde kilo verme sürecini destekler.</p></details>
+</main>
+</div>
+<footer class="main-footer"><div class="container"><p>&copy; 2026 Esse Güzellik. Tüm hakları saklıdır.</p></div></footer>
+</BaseLayout>
+<style>
+.detail-hero{background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;color:white;padding:80px 0;text-align:center;border-bottom:3px solid var(--gold)}
+.breadcrumb{font-size:.9rem;color:#aaa;display:block;margin-bottom:10px}.breadcrumb a{color:#ccc;text-decoration:none}.breadcrumb a:hover{color:var(--gold)}
+.detail-hero h1{color:var(--gold);font-size:3rem;margin:0}
+.detail-layout{display:grid;grid-template-columns:350px 1fr;gap:40px;padding:60px 20px;max-width:1200px;margin:0 auto}
+.machine-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.1);border:1px solid #eee;position:sticky;top:100px}
+.machine-image-wrapper{position:relative;height:250px;background:#f9f9f9;display:flex;align-items:center;justify-content:center}
+.machine-image-wrapper img{max-height:90%;max-width:90%;object-fit:contain}
+.machine-badge{position:absolute;top:15px;right:15px;background:var(--gold);color:black;padding:5px 10px;font-weight:bold;font-size:.8rem;border-radius:4px}
+.machine-info{padding:25px}.machine-info h3{font-size:.9rem;color:#888;text-transform:uppercase;margin-bottom:5px}
+.model-name{font-size:1.4rem;color:var(--dark);font-weight:bold;margin-bottom:20px;border-bottom:2px solid var(--gold);padding-bottom:10px;display:inline-block}
+.tech-specs{list-style:none;padding:0;font-size:.95rem}.tech-specs li{margin-bottom:12px;border-bottom:1px solid #f0f0f0;padding-bottom:8px}.tech-specs strong{color:var(--dark)}
+.info-box{background:var(--light-gray);padding:20px;border-radius:8px;margin-top:20px;border-left:4px solid var(--gold)}.info-box h4{margin:0 0 5px;color:var(--dark);font-size:1rem}.info-box p{margin:0;color:#555;font-size:.9rem}
+.detail-content h2{color:var(--gold);font-size:2rem;margin-bottom:20px}.detail-content p{font-size:1.1rem;line-height:1.8;color:#444;margin-bottom:30px}
+.process-steps{counter-reset:step;list-style:none;padding:0;margin-bottom:40px}.process-steps li{position:relative;padding-left:50px;margin-bottom:20px}
+.process-steps li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:35px;height:35px;background:var(--dark);color:var(--gold);border-radius:50%;text-align:center;line-height:35px;font-weight:bold}
+.faq-item{background:white;border:1px solid #eee;border-radius:8px;margin-bottom:10px;overflow:hidden}
+.faq-item summary{padding:15px 20px;cursor:pointer;font-weight:bold;color:var(--dark);list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-item summary::after{content:'+';font-size:1.5rem;color:var(--gold)}.faq-item[open] summary::after{content:'-'}
+.faq-item p{padding:0 20px 20px;margin:0;color:#666}
+.main-footer{background:var(--dark);color:#aaa;padding:40px 0 20px;text-align:center}
+@media(max-width:900px){.detail-layout{grid-template-columns:1fr}.machine-card{position:static;margin-bottom:30px}}
+</style>

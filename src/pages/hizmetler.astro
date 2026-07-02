@@ -1,0 +1,199 @@
+---
+// Hizmetler Sayfası - Sadece Dropdown Sistemi
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Hizmetlerimiz">
+    <!-- HEADER -->
+    <header class="page-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">ESSE GÜZELLİK</a>
+            <nav class="main-nav">
+                <a href="/">Ana Sayfa</a>
+                <a href="/hizmetler" class="active">Hizmetler</a>
+                <a href="/fiyat-listesi">Fiyat Listesi</a>
+                <a href="/iletisim">İletişim</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SAYFA BAŞLIĞI -->
+    <section class="services-hero">
+        <div class="container">
+            <h1>Hizmet Kategorileri</h1>
+            <p>İlgilendiğiniz kategoriyi seçerek altındaki tüm hizmetleri görüntüleyin.</p>
+        </div>
+    </section>
+
+    <!-- DROPDOWN MENÜLER -->
+    <section class="dropdown-section">
+        <div class="container">
+            
+            <!-- KATEGORİ 1: CİLT BAKIMI -->
+            <details class="service-dropdown" open>
+                <summary class="dropdown-header">
+                    <span class="category-icon">✨</span>
+                    <h2>Cilt Bakımı</h2>
+                    <span class="arrow">▼</span>
+                </summary>
+                <ul class="dropdown-list">
+                    <li><a href="/hizmet-detay/cilt-bakimi">Klasik & Derinlemesine Cilt Bakımı</a></li>
+                    <li><a href="/hizmet-detay/peeling">Kimyasal & Mekanik Peeling</a></li>
+                    <li><a href="/hizmet-detay/leke-bakimi">Leke ve Pigmentasyon Tedavisi</a></li>
+                    <li><a href="/hizmet-detay/akne-bakimi">Akne ve Sivilce Bakımı</a></li>
+                    <li><a href="/hizmet-detay/anti-aging">Anti-Aging & Gençleştirme</a></li>
+                </ul>
+            </details>
+
+            <!-- KATEGORİ 2: LAZER EPİLASYON -->
+            <details class="service-dropdown">
+                <summary class="dropdown-header">
+                    <span class="category-icon">💎</span>
+                    <h2>Lazer Epilasyon</h2>
+                    <span class="arrow">▼</span>
+                </summary>
+                <ul class="dropdown-list">
+                    <li><a href="/hizmet-detay/lazer-epilasyon">Tüm Vücut Lazer Epilasyon</a></li>
+                    <li><a href="/hizmet-detay/bolge-epilasyon">Bölgesel Lazer Uygulaması</a></li>
+                    <li><a href="/hizmet-detay/yaz-lazer">Yaz Dönemi Lazer Bakımı</a></li>
+                </ul>
+            </details>
+
+            <!-- KATEGORİ 3: VÜCUT ŞEKİLLENDİRME -->
+            <details class="service-dropdown">
+                <summary class="dropdown-header">
+                    <span class="category-icon">️‍♀️</span>
+                    <h2>Vücut Şekillendirme</h2>
+                    <span class="arrow">▼</span>
+                </summary>
+                <ul class="dropdown-list">
+                    <li><a href="/hizmet-detay/g5-masaj">G5 Titreşimli Masaj</a></li>
+                    <li><a href="/hizmet-detay/kavitasyon">Ultrasonik Kavitasyon</a></li>
+                    <li><a href="/hizmet-detay/power-plate">Power Plate Titresim Terapisi</a></li>
+                    <li><a href="/hizmet-detay/pasif-jimnastik">Pasif Jimnastik</a></li>
+                </ul>
+            </details>
+
+            <!-- KATEGORİ 4: PROTEZ TIRNAK -->
+            <details class="service-dropdown">
+                <summary class="dropdown-header">
+                    <span class="category-icon">💅</span>
+                    <h2>Protez Tırnak</h2>
+                    <span class="arrow">▼</span>
+                </summary>
+                <ul class="dropdown-list">
+                    <li><a href="/hizmet-detay/jel-tirnak">Jel Tırnak Uygulaması</a></li>
+                    <li><a href="/hizmet-detay/akrilik-tirnak">Akrilik Tırnak Uygulaması</a></li>
+                    <li><a href="/hizmet-detay/nail-art">Nail Art & Tasarım</a></li>
+                </ul>
+            </details>
+
+            <!-- KATEGORİ 5: KAŞ & KİRPİK -->
+            <details class="service-dropdown">
+                <summary class="dropdown-header">
+                    <span class="category-icon">👁️</span>
+                    <h2>Kaş & Kirpik</h2>
+                    <span class="arrow">▼</span>
+                </summary>
+                <ul class="dropdown-list">
+                    <li><a href="/hizmet-detay/mikroblading">Microblading Kaş</a></li>
+                    <li><a href="/hizmet-detay/kas-kontur">Kaş Kontür & Pudralama</a></li>
+                    <li><a href="/hizmet-detay/kirpik-lifting">Kirpik Lifting & Boyama</a></li>
+                    <li><a href="/hizmet-detay/ipek-kirpik">İpek Kirpik Uygulaması</a></li>
+                </ul>
+            </details>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Esse Güzellik</h3>
+                <p>Antalya'nın en güvenilir güzellik merkezi.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Hızlı Linkler</h3>
+                <a href="/hizmetler">Hizmetler</a>
+                <a href="/fiyat-listesi">Fiyatlar</a>
+                <a href="/iletisim">İletişim</a>
+            </div>
+            <div class="footer-col">
+                <h3>İletişim</h3>
+                <p>📍 Toros Mah. 803 Sok. Antalya</p>
+                <p>📞 0553 618 5152</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Esse Güzellik. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+</BaseLayout>
+
+<style>
+    /* Page Header */
+    .page-header { background: var(--dark); padding: 15px 0; border-bottom: 2px solid var(--gold); }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%; }
+    .logo { color: var(--gold); font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
+    .main-nav { display: flex; gap: 30px; align-items: center; }
+    .main-nav a { color: #ccc; font-size: 0.95rem; font-weight: 500; transition: color 0.3s ease; }
+    .main-nav a:hover, .main-nav a.active { color: var(--gold); }
+
+    /* Services Hero */
+    .services-hero {
+        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?auto=format&fit=crop&w=1920&q=80');
+        background-size: cover; background-position: center; color: white; padding: 80px 0; text-align: center;
+    }
+    .services-hero h1 { color: var(--gold); font-size: 2.5rem; margin-bottom: 15px; }
+    .services-hero p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; opacity: 0.9; }
+
+    /* Dropdown Section */
+    .dropdown-section { padding: 60px 0; background: var(--light-gray); min-height: 60vh; }
+    
+    .service-dropdown {
+        background: white; border-radius: 12px; margin-bottom: 15px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #eee;
+    }
+
+    .dropdown-header {
+        display: flex; align-items: center; padding: 20px 25px; cursor: pointer;
+        list-style: none; transition: background 0.3s ease; user-select: none;
+    }
+    .dropdown-header:hover { background: #fafafa; }
+    .dropdown-header::-webkit-details-marker { display: none; }
+
+    .category-icon { font-size: 2rem; margin-right: 15px; }
+    .dropdown-header h2 { flex: 1; font-size: 1.3rem; color: var(--dark); margin: 0; }
+    .arrow { font-size: 1.2rem; color: var(--gold); transition: transform 0.3s ease; }
+    
+    details[open] .arrow { transform: rotate(180deg); }
+
+    /* Liste Stili */
+    .dropdown-list {
+        list-style: none; padding: 0; margin: 0; border-top: 1px solid #eee;
+    }
+    .dropdown-list li { border-bottom: 1px solid #f5f5f5; }
+    .dropdown-list li:last-child { border-bottom: none; }
+    
+    .dropdown-list a {
+        display: block; padding: 15px 25px 15px 65px; /* İkon hizasına göre boşluk */
+        color: #555; text-decoration: none; font-size: 1rem; transition: all 0.2s ease;
+    }
+    .dropdown-list a:hover {
+        background: var(--light-gray); color: var(--gold); padding-left: 70px;
+    }
+
+    /* Footer */
+    .main-footer { background: var(--dark); color: #aaa; padding: 60px 0 20px; }
+    .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h3 { color: var(--gold); margin-bottom: 20px; }
+    .footer-col a { display: block; margin-bottom: 10px; }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #333; font-size: 0.9rem; }
+
+    @media (max-width: 768px) {
+        .main-nav { gap: 15px; font-size: 0.85rem; }
+        .dropdown-list a { padding-left: 25px; }
+    }
+</style>

@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Akne Bakımı | Esse Güzellik">
+<section class="detail-hero"><div class="container"><span class="breadcrumb"><a href="/">Ana Sayfa</a> > <a href="/hizmetler">Hizmetler</a> > Akne Bakımı</span><h1>Akne & Sivilce Bakımı</h1><p>Yağlı ve problemli ciltler için derinlemesine arındırma protokolü.</p></div></section>
+<div class="container detail-layout">
+<aside class="detail-sidebar">
+<div class="machine-card"><div class="machine-image-wrapper"><img src="/images/akne-placeholder.jpg" alt="Blue Light Therapy" /><span class="machine-badge">AKNE TEDAVİSİ</span></div>
+<div class="machine-info"><h3>Cihaz Modeli</h3><p class="model-name">Blue Light LED Therapy</p>
+<ul class="tech-specs"><li><strong>Teknoloji:</strong> Mavi Işık Fototerapi</li><li><strong>Dalga Boyu:</strong> 415nm (Antibakteriyel)</li><li><strong>Etki:</strong> P. Acnes Bakterisini Yok Eder</li><li><strong>Uygulama Süresi:</strong> 20 Dakika</li></ul></div></div>
+<div class="info-box"><h4>🔄 Kür Süresi</h4><p>Haftada 1-2 kez, toplam 8-10 seans</p></div>
+<div class="info-box"><h4>💧 Destek</h4><p>Ev bakım ürünleriyle kombine edilir</p></div>
+</aside>
+<main class="detail-content">
+<h2>Akne Bakımı Protokolü</h2>
+<p>Akne bakımı, sadece yüzeydeki sivilceleri değil, altta yatan sebepleri de hedefleyen kapsamlı bir tedavi sürecidir. Sebum dengesi düzenlenir, gözenekler derinlemesine temizlenir, bakteriler antibakteriyel ışıkla yok edilir ve cilt bariyeri onarılır.</p>
+<h3>Uygulama Adımları</h3>
+<ol class="process-steps">
+<li><strong>Derin Temizlik:</strong> Salisilik asit içeren temizleyici ile çift aşamalı yıkama.</li>
+<li><strong>Buhar & Ekstraksiyon:</strong> Gözenekler açılır, komedonlar steril şekilde alınır.</li>
+<li><strong>Mavi Işık Terapisi:</strong> 415nm LED ışık ile akne bakterileri öldürülür.</li>
+<li><strong>Sakinleştirme:</strong> Çinko ve niacinamid içeren maske ile cilt yatıştırılır.</li>
+</ol>
+<h3>Sıkça Sorulan Sorular</h3>
+<details class="faq-item"><summary>Ne zaman sonuç alırım?</summary><p>İlk 3 seansta aktif sivilcelerde azalma, 6-8 seansta belirgin düzelme gözlenir.</p></details>
+<details class="faq-item"><summary>İz kalır mı?</summary><p>Profesyonel ekstraksiyon doğru yapıldığında iz kalmaz. Evde sıkma kesinlikle önerilmez.</p></details>
+</main>
+</div>
+<footer class="main-footer"><div class="container"><p>&copy; 2026 Esse Güzellik. Tüm hakları saklıdır.</p></div></footer>
+</BaseLayout>
+<style>
+.detail-hero{background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;color:white;padding:80px 0;text-align:center;border-bottom:3px solid var(--gold)}
+.breadcrumb{font-size:.9rem;color:#aaa;display:block;margin-bottom:10px}.breadcrumb a{color:#ccc;text-decoration:none}.breadcrumb a:hover{color:var(--gold)}
+.detail-hero h1{color:var(--gold);font-size:3rem;margin:0}
+.detail-layout{display:grid;grid-template-columns:350px 1fr;gap:40px;padding:60px 20px;max-width:1200px;margin:0 auto}
+.machine-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.1);border:1px solid #eee;position:sticky;top:100px}
+.machine-image-wrapper{position:relative;height:250px;background:#f9f9f9;display:flex;align-items:center;justify-content:center}
+.machine-image-wrapper img{max-height:90%;max-width:90%;object-fit:contain}
+.machine-badge{position:absolute;top:15px;right:15px;background:var(--gold);color:black;padding:5px 10px;font-weight:bold;font-size:.8rem;border-radius:4px}
+.machine-info{padding:25px}.machine-info h3{font-size:.9rem;color:#888;text-transform:uppercase;margin-bottom:5px}
+.model-name{font-size:1.4rem;color:var(--dark);font-weight:bold;margin-bottom:20px;border-bottom:2px solid var(--gold);padding-bottom:10px;display:inline-block}
+.tech-specs{list-style:none;padding:0;font-size:.95rem}.tech-specs li{margin-bottom:12px;border-bottom:1px solid #f0f0f0;padding-bottom:8px}.tech-specs strong{color:var(--dark)}
+.info-box{background:var(--light-gray);padding:20px;border-radius:8px;margin-top:20px;border-left:4px solid var(--gold)}.info-box h4{margin:0 0 5px;color:var(--dark);font-size:1rem}.info-box p{margin:0;color:#555;font-size:.9rem}
+.detail-content h2{color:var(--gold);font-size:2rem;margin-bottom:20px}.detail-content p{font-size:1.1rem;line-height:1.8;color:#444;margin-bottom:30px}
+.process-steps{counter-reset:step;list-style:none;padding:0;margin-bottom:40px}.process-steps li{position:relative;padding-left:50px;margin-bottom:20px}
+.process-steps li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:35px;height:35px;background:var(--dark);color:var(--gold);border-radius:50%;text-align:center;line-height:35px;font-weight:bold}
+.faq-item{background:white;border:1px solid #eee;border-radius:8px;margin-bottom:10px;overflow:hidden}
+.faq-item summary{padding:15px 20px;cursor:pointer;font-weight:bold;color:var(--dark);list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-item summary::after{content:'+';font-size:1.5rem;color:var(--gold)}.faq-item[open] summary::after{content:'-'}
+.faq-item p{padding:0 20px 20px;margin:0;color:#666}
+.main-footer{background:var(--dark);color:#aaa;padding:40px 0 20px;text-align:center}
+@media(max-width:900px){.detail-layout{grid-template-columns:1fr}.machine-card{position:static;margin-bottom:30px}}
+</style>

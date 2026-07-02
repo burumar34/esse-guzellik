@@ -1,17 +1,247 @@
 ---
-
+// Ana Sayfa - Esse Güzellik (Randevusuz Versiyon)
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EsseBot from '../components/EsseBot.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Ana Sayfa">
+    <!-- HEADER / NAVİGASYON -->
+    <header class="main-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">ESSE GÜZELLİK</a>
+            <nav class="main-nav">
+                <a href="/">Ana Sayfa</a>
+                <a href="/hizmetler">Hizmetler</a>
+                <a href="/fiyat-listesi">Fiyat Listesi</a>
+                <a href="/iletisim">İletişim</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO BÖLÜMÜ -->
+    <section class="hero-section">
+        <div class="container hero-content">
+            <h1>Güzelliğinizi Yeniden Keşfedin</h1>
+            <p>Son teknoloji cihazlar ve uzman kadromuzla size özel bakım deneyimi sunuyoruz.</p>
+            <div class="hero-buttons">
+                <a href="/hizmetler" class="btn-gold">Hizmetleri İncele</a>
+                <a href="/fiyat-listesi" class="btn-outline">Fiyatları Gör</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÖNE ÇIKAN HİZMETLER -->
+    <section class="featured-services">
+        <div class="container">
+            <h2 class="section-title">Popüler Hizmetlerimiz</h2>
+            <div class="services-preview-grid">
+                <a href="/hizmetler" class="preview-card">
+                    <div class="card-icon">✨</div>
+                    <h3>Cilt Bakımı</h3>
+                    <p>Hydrafacial ile derinlemesine temizlik</p>
+                </a>
+                <a href="/hizmetler" class="preview-card">
+                    <div class="card-icon">💎</div>
+                    <h3>Lazer Epilasyon</h3>
+                    <p>Acısız ve kalıcı çözüm</p>
+                </a>
+                <a href="/hizmetler" class="preview-card">
+                    <div class="card-icon"></div>
+                    <h3>Protez Tırnak</h3>
+                    <p>Jel ve akrilik uygulamaları</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOT BİLEŞENİ -->
+    <EsseBot />
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Esse Güzellik</h3>
+                <p>Antalya'nın en güvenilir güzellik merkezi.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Hızlı Linkler</h3>
+                <a href="/hizmetler">Hizmetler</a>
+                <a href="/fiyat-listesi">Fiyatlar</a>
+                <a href="/iletisim">İletişim</a>
+            </div>
+            <div class="footer-col">
+                <h3>İletişim</h3>
+                <p>📍 Toros Mah. 803 Sok. Antalya</p>
+                <p>📞 0553 618 5152</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Esse Güzellik. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+</BaseLayout>
+
+<style>
+    /* Header Stilleri */
+    .main-header {
+        background: var(--dark);
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 2px solid var(--gold);
+    }
+    
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        color: var(--gold);
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    
+    .main-nav {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .main-nav a {
+        color: #ccc;
+        font-size: 0.9rem;
+    }
+    
+    .main-nav a:hover {
+        color: var(--gold);
+    }
+
+    /* Hero Section */
+    .hero-section {
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 120px 0;
+        text-align: center;
+    }
+    
+    .hero-content h1 {
+        color: var(--gold);
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto 30px;
+        opacity: 0.9;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+    
+    .btn-gold {
+        background: var(--gold);
+        color: var(--dark);
+        padding: 12px 30px;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+    
+    .btn-outline {
+        border: 2px solid white;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+
+    /* Featured Services */
+    .featured-services {
+        padding: 80px 0;
+        background: var(--light-gray);
+    }
+    
+    .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 40px;
+        color: var(--dark);
+    }
+    
+    .services-preview-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    
+    .preview-card {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 12px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #eee;
+    }
+    
+    .preview-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border-color: var(--gold);
+    }
+    
+    .card-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+    
+    .preview-card h3 {
+        color: var(--gold);
+        margin-bottom: 10px;
+    }
+
+    /* Footer */
+    .main-footer {
+        background: var(--dark);
+        color: #aaa;
+        padding: 60px 0 20px;
+    }
+    
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+    
+    .footer-col h3 {
+        color: var(--gold);
+        margin-bottom: 20px;
+    }
+    
+    .footer-col a {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .footer-col a:hover {
+        color: var(--gold);
+    }
+    
+    .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+        font-size: 0.9rem;
+    }
+</style>
