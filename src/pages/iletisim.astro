@@ -48,6 +48,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     </div>
                 </div>
 
+                <!-- INSTAGRAM KARTI -->
+                <div class="info-card instagram-card">
+                    <span class="icon">📷</span>
+                    <div>
+                        <h3>Instagram</h3>
+                        <p><a href="https://instagram.com/esseguzellik" target="_blank">@esseguzellik</a></p>
+                        <p class="sub-text">Güncel paylaşımlar ve öncesi/sonrası</p>
+                    </div>
+                </div>
+
                 <div class="info-card">
                     <span class="icon">✉️</span>
                     <div>
@@ -67,15 +77,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <!-- SAĞ TARAF: HARİTA -->
             <div class="map-container">
                 <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.456789012345!2d30.71345678901234!3d36.89123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDUzJzI4LjQiTiAzMMKwNDInNDguNCJF!5e0!3m2!1str!2str!4v1234567890123!5m2!1str!2str" 
-    width="100%" 
-    height="100%" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade"
-    title="Esse Güzellik Konum Haritası">
-</iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.456789012345!2d30.71345678901234!3d36.89123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDUzJzI4LjQiTiAzMMKwNDInNDguNCJF!5e0!3m2!1str!2str!4v1234567890123!5m2!1str!2str" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Esse Güzellik Konum Haritası">
+                </iframe>
             </div>
 
         </div>
@@ -107,7 +117,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-    /* Header & Footer (Aynı) */
+    /* Header & Footer */
     .page-header { background: var(--dark); padding: 15px 0; border-bottom: 2px solid var(--gold); }
     .header-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%; }
     .logo { color: var(--gold); font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
@@ -140,6 +150,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .info-card a:hover { text-decoration: underline; }
     .sub-text { font-size: 0.85rem !important; color: #888 !important; margin-top: 5px !important; }
 
+    /* Instagram Özel Stil */
+    .instagram-card { border-left-color: #E1306C !important; }
+    .instagram-card a { color: #E1306C !important; }
+    .instagram-card a:hover { text-decoration: underline; }
+
     .whatsapp-big-btn {
         display: inline-flex; align-items: center; justify-content: center; gap: 10px;
         background-color: #25D366; color: white; padding: 18px; border-radius: 12px;
@@ -156,7 +171,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     /* Footer */
     .main-footer { background: var(--dark); color: #aaa; padding: 60px 0 20px; }
-    .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; max-width: 1200px; margin: 0 auto; }
     .footer-col h3 { color: var(--gold); margin-bottom: 20px; }
     .footer-col a { display: block; margin-bottom: 10px; }
     .footer-col a:hover { color: var(--gold); }
