@@ -1,0 +1,168 @@
+---
+// İletişim Sayfası - Esse Güzellik
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="İletişim">
+    <!-- HEADER -->
+    <header class="page-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">ESSE GÜZELLİK</a>
+            <nav class="main-nav">
+                <a href="/">Ana Sayfa</a>
+                <a href="/hizmetler">Hizmetler</a>
+                <a href="/fiyat-listesi">Fiyat Listesi</a>
+                <a href="/iletisim" class="active">İletişim</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SAYFA BAŞLIĞI -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Bize Ulaşın</h1>
+            <p>Sorularınız için arayın, yazın veya salonumuza bekleriz.</p>
+        </div>
+    </section>
+
+    <!-- İLETİŞİM BİLGİLERİ VE HARİTA -->
+    <section class="contact-section">
+        <div class="container contact-grid">
+            
+            <!-- SOL TARAF: BİLGİLER -->
+            <div class="contact-info">
+                <div class="info-card">
+                    <span class="icon">📍</span>
+                    <div>
+                        <h3>Adresimiz</h3>
+                        <p>Toros Mahallesi, 803. Sokak<br>No: 12/A, Muratpaşa / Antalya</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <span class="icon">📞</span>
+                    <div>
+                        <h3>Telefon & WhatsApp</h3>
+                        <p><a href="tel:+905536185152">0553 618 51 52</a></p>
+                        <p class="sub-text">Hafta içi 09:00 - 19:00</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <span class="icon">✉️</span>
+                    <div>
+                        <h3>E-Posta</h3>
+                        <p><a href="mailto:info@esseguzellik.com">info@esseguzellik.com</a></p>
+                    </div>
+                </div>
+
+                <!-- HIZLI WHATSAPP BUTONU -->
+                <a href="https://wa.me/905536185152?text=Merhaba,%20iletişim%20sayfanızdan%20yazıyorum." 
+                   target="_blank" 
+                   class="whatsapp-big-btn">
+                    💬 WhatsApp'tan Yazın
+                </a>
+            </div>
+
+            <!-- SAĞ TARAF: HARİTA -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.456789012345!2d30.71345678901234!3d36.89123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDUzJzI4LjQiTiAzMMKwNDInNDguNCJF!5e0!3m2!1str!2str!4v1234567890123!5m2!1str!2str" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Esse Güzellik</h3>
+                <p>Antalya'nın en güvenilir güzellik merkezi.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Hızlı Linkler</h3>
+                <a href="/hizmetler">Hizmetler</a>
+                <a href="/fiyat-listesi">Fiyatlar</a>
+                <a href="/iletisim">İletişim</a>
+            </div>
+            <div class="footer-col">
+                <h3>İletişim</h3>
+                <p>📍 Toros Mah. 803 Sok. Antalya</p>
+                <p>📞 0553 618 5152</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Esse Güzellik. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+</BaseLayout>
+
+<style>
+    /* Header & Footer (Aynı) */
+    .page-header { background: var(--dark); padding: 15px 0; border-bottom: 2px solid var(--gold); }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%; }
+    .logo { color: var(--gold); font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
+    .main-nav { display: flex; gap: 30px; align-items: center; }
+    .main-nav a { color: #ccc; font-size: 0.95rem; font-weight: 500; transition: color 0.3s ease; }
+    .main-nav a:hover, .main-nav a.active { color: var(--gold); }
+
+    /* Contact Hero */
+    .contact-hero {
+        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1920&q=80');
+        background-size: cover; background-position: center; color: white; padding: 80px 0; text-align: center;
+    }
+    .contact-hero h1 { color: var(--gold); font-size: 2.5rem; margin-bottom: 15px; }
+    .contact-hero p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; opacity: 0.9; }
+
+    /* Contact Grid */
+    .contact-section { padding: 60px 0; background: var(--light-gray); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; }
+
+    /* Info Cards */
+    .contact-info { display: flex; flex-direction: column; gap: 20px; }
+    .info-card {
+        background: white; padding: 25px; border-radius: 12px; display: flex; align-items: flex-start; gap: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 4px solid var(--gold);
+    }
+    .info-card .icon { font-size: 2rem; }
+    .info-card h3 { margin: 0 0 5px; color: var(--dark); font-size: 1.1rem; }
+    .info-card p { margin: 0; color: #555; line-height: 1.5; }
+    .info-card a { color: var(--gold); text-decoration: none; font-weight: bold; }
+    .info-card a:hover { text-decoration: underline; }
+    .sub-text { font-size: 0.85rem !important; color: #888 !important; margin-top: 5px !important; }
+
+    .whatsapp-big-btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+        background-color: #25D366; color: white; padding: 18px; border-radius: 12px;
+        font-size: 1.2rem; font-weight: bold; text-decoration: none; text-align: center;
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); transition: all 0.3s ease; margin-top: 10px;
+    }
+    .whatsapp-big-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6); }
+
+    /* Map */
+    .map-container {
+        border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        min-height: 400px; border: 4px solid white;
+    }
+
+    /* Footer */
+    .main-footer { background: var(--dark); color: #aaa; padding: 60px 0 20px; }
+    .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h3 { color: var(--gold); margin-bottom: 20px; }
+    .footer-col a { display: block; margin-bottom: 10px; }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #333; font-size: 0.9rem; }
+
+    @media (max-width: 900px) {
+        .contact-grid { grid-template-columns: 1fr; }
+        .map-container { min-height: 300px; }
+    }
+</style>
