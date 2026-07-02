@@ -1,143 +1,101 @@
-<!-- EsseBot.astro - Müşteri Asistanı -->
+<!-- EsseBot.astro - Satış Odaklı Müşteri Asistanı (Hatasız Versiyon) -->
 <div class="esse-bot-wrapper">
-    <button class="bot-toggle" id="botToggle">💬 Esse Bot</button>
+    <button class="bot-toggle" id="botToggle">💬 Hızlı Bilgi Al</button>
     <div class="bot-window" id="botWindow" style="display: none;">
         <div class="bot-header">
-            <span>🤖 Esse Güzellik Asistanı</span>
+            <span> Esse Satış Asistanı</span>
             <button class="close-btn" id="closeBot">×</button>
         </div>
         <div class="bot-messages" id="botMessages">
-            <div class="message bot-message">Merhaba! Size nasıl yardımcı olabilirim? 😊</div>
+            <div class="message bot-message">Merhaba! Size nasıl yardımcı olabilirim? 😊<br><br>🔹 Fiyat bilgisi<br> Cihaz detayları<br>🔹 Müsaitlik durumu</div>
         </div>
         <div class="bot-input-area">
-            <input type="text" placeholder="Mesajınızı yazın..." id="botInput" />
+            <input type="text" placeholder="Sorunuzu yazın..." id="botInput" />
             <button id="sendBtn">Gönder</button>
         </div>
     </div>
 </div>
 
 <style>
-    .esse-bot-wrapper {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 9999;
-    }
-    
-    .bot-toggle {
-        background: var(--gold);
-        color: var(--dark);
-        border: none;
-        padding: 15px 25px;
-        border-radius: 50px;
-        font-weight: bold;
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
-        transition: transform 0.3s ease;
-    }
-    
-    .bot-toggle:hover {
-        transform: scale(1.05);
-    }
-    
-    .bot-window {
-        position: absolute;
-        bottom: 70px;
-        right: 0;
-        width: 350px;
-        height: 500px;
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-    }
-    
-    .bot-header {
-        background: var(--dark);
-        color: var(--gold);
-        padding: 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-weight: bold;
-    }
-    
-    .close-btn {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-    
-    .bot-messages {
-        flex: 1;
-        padding: 15px;
-        overflow-y: auto;
-        background: var(--light-gray);
-    }
-    
-    .message {
-        margin-bottom: 10px;
-        padding: 10px 15px;
-        border-radius: 12px;
-        max-width: 80%;
-        font-size: 0.9rem;
-    }
-    
-    .bot-message {
-        background: white;
-        border: 1px solid #eee;
-        align-self: flex-start;
-    }
-    
-    .user-message {
-        background: var(--gold);
-        color: var(--dark);
-        align-self: flex-end;
-        margin-left: auto;
-    }
-    
-    .bot-input-area {
-        padding: 15px;
-        border-top: 1px solid #eee;
-        display: flex;
-        gap: 10px;
-    }
-    
-    .bot-input-area input {
-        flex: 1;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        outline: none;
-    }
-    
-    .bot-input-area button {
-        background: var(--gold);
-        border: none;
-        padding: 10px 20px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: bold;
-    }
+    .esse-bot-wrapper { position: fixed; bottom: 20px; right: 20px; z-index: 9999; }
+    .bot-toggle { background: var(--gold); color: var(--dark); border: none; padding: 15px 25px; border-radius: 50px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4); transition: transform 0.3s ease; font-size: 1rem; }
+    .bot-toggle:hover { transform: scale(1.05); }
+    .bot-window { position: absolute; bottom: 70px; right: 0; width: 350px; height: 500px; background: white; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); display: flex; flex-direction: column; overflow: hidden; }
+    .bot-header { background: var(--dark); color: var(--gold); padding: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; }
+    .close-btn { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+    .bot-messages { flex: 1; padding: 15px; overflow-y: auto; background: var(--light-gray); display: flex; flex-direction: column; gap: 10px; }
+    .message { padding: 10px 15px; border-radius: 12px; max-width: 85%; font-size: 0.9rem; line-height: 1.4; word-wrap: break-word; }
+    .bot-message { background: white; border: 1px solid #eee; align-self: flex-start; }
+    .user-message { background: var(--gold); color: var(--dark); align-self: flex-end; margin-left: auto; }
+    .bot-input-area { padding: 15px; border-top: 1px solid #eee; display: flex; gap: 10px; }
+    .bot-input-area input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 8px; outline: none; }
+    .bot-input-area button { background: var(--gold); border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; }
 </style>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const toggle = document.getElementById('botToggle');
-        const window = document.getElementById('botWindow');
-        const close = document.getElementById('closeBot');
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+        var toggle = document.getElementById('botToggle');
+        var windowEl = document.getElementById('botWindow');
+        var closeBtn = document.getElementById('closeBot');
+        var inputField = document.getElementById('botInput');
+        var sendBtn = document.getElementById('sendBtn');
+        var messagesContainer = document.getElementById('botMessages');
         
-        if(toggle && window && close) {
-            toggle.addEventListener('click', () => {
-                window.style.display = window.style.display === 'none' ? 'flex' : 'none';
-            });
+        // Telefon numarası sabiti
+        var PHONE_NUMBER = "905536185152"; 
+
+        function addMessage(text, isUser) {
+            if (!messagesContainer) return;
+            var div = document.createElement('div');
+            div.className = 'message ' + (isUser ? 'user-message' : 'bot-message');
+            div.innerHTML = text;
+            messagesContainer.appendChild(div);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function handleResponse(userText) {
+            var lower = userText.toLowerCase();
+            var response = "";
+            var waLink = "https://wa.me/" + PHONE_NUMBER;
+
+            if (lower.indexOf("fiyat") > -1 || lower.indexOf("kaç para") > -1 || lower.indexOf("ücret") > -1) {
+                response = "Güncel fiyat listemizi incelemek için 👉 <a href='/fiyat-listesi' target='_blank' style='color:#D4AF37;font-weight:bold;'>Buraya Tıklayın</a><br><br>Paket indirimleri için WhatsApp'tan 'PAKET' yazabilirsiniz!";
+            } 
+            else if (lower.indexOf("lazer") > -1 || lower.indexOf("epilasyon") > -1) {
+                var lazerWa = waLink + "?text=Merhaba,%20Lazer%20Epilasyon%20paket%20fiyatları%20hakkında%20bilgi%20almak%20istiyorum.";
+                response = "Lazer epilasyon seans başlangıç fiyatımız güncel listede yer almaktadır. Size özel paket fiyatı almak için WhatsApp'a yönlendiriyorum... 👇<br><br><a href='" + lazerWa + "' target='_blank' style='background:#25D366;color:white;padding:8px 15px;border-radius:20px;text-decoration:none;display:inline-block;margin-top:5px;'> WhatsApp'tan Paket Fiyatı Al</a>";
+            }
+            else if (lower.indexOf("cilt") > -1 || lower.indexOf("bakım") > -1) {
+                response = "Cilt bakımı hizmetlerimiz ve cihaz detayları için 👉 <a href='/hizmet-detay/cilt-bakimi' target='_blank' style='color:#D4AF37;font-weight:bold;'>Detay Sayfası</a><br><br>Randevu oluşturmak için WhatsApp kullanabilirsiniz.";
+            }
+            else {
+                response = "Size en hızlı şekilde dönüş yapabilmemiz için lütfen WhatsApp üzerinden bize ulaşın. Uzman ekibimiz size anında yardımcı olacaktır! 👇<br><br><a href='" + waLink + "' target='_blank' style='background:#25D366;color:white;padding:8px 15px;border-radius:20px;text-decoration:none;display:inline-block;margin-top:5px;'>💬 WhatsApp'a Git</a>";
+            }
+
+            setTimeout(function() { addMessage(response, false); }, 600);
+        }
+
+        function sendMessage() {
+            if (!inputField) return;
+            var text = inputField.value.trim();
+            if (!text) return;
             
-            close.addEventListener('click', () => {
-                window.style.display = 'none';
+            addMessage(text, true);
+            inputField.value = '';
+            handleResponse(text);
+        }
+
+        if(toggle && windowEl && closeBtn) {
+            toggle.addEventListener('click', function() {
+                windowEl.style.display = windowEl.style.display === 'none' ? 'flex' : 'none';
+            });
+            closeBtn.addEventListener('click', function() { windowEl.style.display = 'none'; });
+        }
+        
+        if(sendBtn && inputField) {
+            sendBtn.addEventListener('click', sendMessage);
+            inputField.addEventListener('keypress', function(e) { 
+                if(e.key === 'Enter') sendMessage(); 
             });
         }
     });

@@ -1,0 +1,125 @@
+---
+// Fiyat Listesi Sayfası - Esse Güzellik
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Fiyat Listesi">
+    <!-- HEADER -->
+    <header class="page-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">ESSE GÜZELLİK</a>
+            <nav class="main-nav">
+                <a href="/">Ana Sayfa</a>
+                <a href="/hizmetler">Hizmetler</a>
+                <a href="/fiyat-listesi" class="active">Fiyat Listesi</a>
+                <a href="/iletisim">İletişim</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SAYFA BAŞLIĞI -->
+    <section class="price-hero">
+        <div class="container">
+            <h1>Güncel Fiyat Listesi</h1>
+            <p>Hizmetlerimizin güncel fiyatlarını aşağıdan inceleyebilirsiniz.</p>
+        </div>
+    </section>
+
+    <!-- FİYAT GÖRSELİ VE WHATSAPP BUTONU -->
+    <section class="price-image-section">
+        <div class="container">
+            <div class="image-wrapper">
+                <!-- SENİN FOTOĞRAFIN BURAYA GELECEK -->
+                <img src="/images/fiyat-listesi.jpg" alt="Esse Güzellik Fiyat Listesi" />
+            </div>
+            
+            <!-- SATIŞ ODAKLI ALT BUTONLAR -->
+            <div class="action-buttons">
+                <a href="https://wa.me/905536185152?text=Merhaba,%20Fiyat%20listesindeki%20hizmetler%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank" 
+                   class="whatsapp-cta-btn">
+                    💬 Fiyatlar Hakkında Bilgi Al
+                </a>
+                <p class="note">* Fiyatlar haber verilmeden değiştirilebilir. Güncel bilgi için iletişime geçiniz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Esse Güzellik</h3>
+                <p>Antalya'nın en güvenilir güzellik merkezi.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Hızlı Linkler</h3>
+                <a href="/hizmetler">Hizmetler</a>
+                <a href="/fiyat-listesi">Fiyatlar</a>
+                <a href="/iletisim">İletişim</a>
+            </div>
+            <div class="footer-col">
+                <h3>İletişim</h3>
+                <p>📍 Toros Mah. 803 Sok. Antalya</p>
+                <p> 0553 618 5152</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Esse Güzellik. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+</BaseLayout>
+
+<style>
+    /* Header & Footer Stilleri (Aynı kalacak) */
+    .page-header { background: var(--dark); padding: 15px 0; border-bottom: 2px solid var(--gold); }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%; }
+    .logo { color: var(--gold); font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
+    .main-nav { display: flex; gap: 30px; align-items: center; }
+    .main-nav a { color: #ccc; font-size: 0.95rem; font-weight: 500; transition: color 0.3s ease; }
+    .main-nav a:hover, .main-nav a.active { color: var(--gold); }
+
+    /* Price Hero */
+    .price-hero {
+        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1920&q=80');
+        background-size: cover; background-position: center; color: white; padding: 80px 0; text-align: center;
+    }
+    .price-hero h1 { color: var(--gold); font-size: 2.5rem; margin-bottom: 15px; }
+    .price-hero p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; opacity: 0.9; }
+
+    /* Image Section & WhatsApp Button */
+    .price-image-section { padding: 60px 0; background: var(--light-gray); min-height: 60vh; display: flex; flex-direction: column; align-items: center; }
+    .image-wrapper {
+        max-width: 800px; width: 100%; margin: 0 auto 30px; border-radius: 12px; overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.15); border: 4px solid white;
+        transition: transform 0.3s ease;
+    }
+    .image-wrapper:hover { transform: scale(1.01); }
+    .image-wrapper img { width: 100%; height: auto; display: block; }
+    
+    .action-buttons { text-align: center; max-width: 800px; margin: 0 auto; }
+    
+    .whatsapp-cta-btn {
+        display: inline-flex; align-items: center; gap: 10px;
+        background-color: #25D366; color: white;
+        padding: 18px 40px; border-radius: 50px;
+        font-size: 1.2rem; font-weight: bold; text-decoration: none;
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        transition: all 0.3s ease; margin-bottom: 20px;
+    }
+    .whatsapp-cta-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+        background-color: #20bd5a;
+    }
+
+    .note { color: #666; font-size: 0.9rem; font-style: italic; margin: 0; }
+
+    /* Footer */
+    .main-footer { background: var(--dark); color: #aaa; padding: 60px 0 20px; }
+    .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h3 { color: var(--gold); margin-bottom: 20px; }
+    .footer-col a { display: block; margin-bottom: 10px; }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #333; font-size: 0.9rem; }
+</style>
