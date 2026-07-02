@@ -38,14 +38,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <a href="https://wa.me/905536185152?text=Merhaba,%20Fiyat%20listesindeki%20hizmetler%20hakkında%20bilgi%20almak%20istiyorum." 
                    target="_blank" 
                    class="whatsapp-cta-btn">
-                    💬 Fiyatlar Hakkında Bilgi Al
+                     Fiyatlar Hakkında Bilgi Al
                 </a>
                 
                 <!-- INSTAGRAM BUTONU -->
                 <a href="https://instagram.com/esseguzellik" 
                    target="_blank" 
                    class="instagram-cta-btn">
-                    📷 Instagram'da Takip Et
+                     Instagram'da Takip Et
+                </a>
+
+                <!-- FACEBOOK BUTONU -->
+                <a href="https://facebook.com/esseguzellik" 
+                   target="_blank" 
+                   class="facebook-cta-btn">
+                    📘 Facebook'ta Beğen
                 </a>
                 
                 <p class="note">* Fiyatlar haber verilmeden değiştirilebilir. Güncel bilgi için iletişime geçiniz.</p>
@@ -68,8 +75,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
             <div class="footer-col">
                 <h3>İletişim</h3>
-                <p>📍 Toros Mah. 803 Sok. Antalya</p>
-                <p> 0553 618 5152</p>
+                <p> Toros Mah. 803 Sok. Antalya</p>
+                <p>📞 0553 618 5152</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -134,6 +141,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         transform: translateY(-3px);
         box-shadow: 0 10px 25px rgba(220, 39, 67, 0.6);
         filter: brightness(1.1);
+    }
+
+    /* Facebook CTA Butonu */
+    .facebook-cta-btn {
+        display: inline-flex; align-items: center; gap: 10px;
+        background-color: #1877F2; color: white;
+        padding: 18px 40px; border-radius: 50px;
+        font-size: 1.2rem; font-weight: bold; text-decoration: none;
+        box-shadow: 0 6px 20px rgba(24, 119, 242, 0.4);
+        transition: all 0.3s ease;
+    }
+    .facebook-cta-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(24, 119, 242, 0.6);
+        background-color: #166fe5;
     }
 
     .note { color: #666; font-size: 0.9rem; font-style: italic; margin: 10px 0 0; }
