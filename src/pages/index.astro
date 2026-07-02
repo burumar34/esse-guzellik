@@ -54,6 +54,17 @@ import EsseBot from '../components/EsseBot.astro';
         </div>
     </section>
 
+    <!-- FİYAT LİSTESİ YÖNLENDİRME BÖLÜMÜ -->
+    <section class="price-cta-section">
+        <div class="container cta-content">
+            <h2>Hizmet Fiyatlarımızı Merak Ediyor Musunuz?</h2>
+            <p>Tüm hizmetlerimiz için güncel fiyat listemizi inceleyin veya size özel paket fiyatları almak için bizimle iletişime geçin.</p>
+            <a href="/fiyat-listesi" class="btn-price-cta">
+                📋 Fiyat Listesini İncele
+            </a>
+        </div>
+    </section>
+
     <!-- BOT BİLEŞENİ -->
     <EsseBot />
 
@@ -97,6 +108,10 @@ import EsseBot from '../components/EsseBot.astro';
         display: flex;
         justify-content: space-between;
         align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        width: 100%;
     }
     
     .logo {
@@ -108,13 +123,15 @@ import EsseBot from '../components/EsseBot.astro';
     
     .main-nav {
         display: flex;
-        gap: 20px;
+        gap: 30px;
         align-items: center;
     }
     
     .main-nav a {
         color: #ccc;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
     }
     
     .main-nav a:hover {
@@ -210,6 +227,49 @@ import EsseBot from '../components/EsseBot.astro';
         margin-bottom: 10px;
     }
 
+    /* Price CTA Section */
+    .price-cta-section {
+        background: var(--dark);
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+        border-top: 3px solid var(--gold);
+        border-bottom: 3px solid var(--gold);
+    }
+    
+    .cta-content h2 {
+        color: var(--gold);
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .cta-content p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto 30px;
+        opacity: 0.9;
+    }
+    
+    .btn-price-cta {
+        display: inline-block;
+        background: transparent;
+        border: 2px solid var(--gold);
+        color: var(--gold);
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+    
+    .btn-price-cta:hover {
+        background: var(--gold);
+        color: var(--dark);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+    }
+
     /* Footer */
     .main-footer {
         background: var(--dark);
@@ -222,6 +282,9 @@ import EsseBot from '../components/EsseBot.astro';
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 40px;
         margin-bottom: 40px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .footer-col h3 {
